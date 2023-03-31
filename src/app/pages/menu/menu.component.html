@@ -1,0 +1,118 @@
+<div class="container-fluid">
+    <div class="card mt-2">
+      <div class="card-header bg-principal">
+        <h4 class="m-3 text-white" style="cursor:pointer; width: fit-content;" (click)="abriModalIncluir()">
+          Menu
+          <a title="Incluir" id="btnincluir" class="btn-estilo-icone" style="font-size:20pt;"><span><i
+                class="fa fa-plus-circle"
+                style="color:white; vertical-align: middle; text-decoration:none!important"></i></span></a>
+        </h4>
+      </div>
+      <div class="card-body">
+  
+        <div class="row">
+          <div class="col-md-12">
+            <button type="button" title="Voltar" *ngIf="false"
+              class="btn btn-outline-info waves-effect btn-sm largurabotoescomandosgrid" routerLink="Chamador">
+              <i class="fa fa-arrow-circle-left" style="font-size: 15pt;" aria-hidden="true"></i>
+            </button>
+  
+            <dx-data-grid #dataGridVar [dataSource]="dataSource" [showBorders]="true" [allowColumnResizing]="true"
+              [allowColumnReordering]="true" [showRowLines]="true" [columnAutoWidth]="false"
+              [rowAlternationEnabled]="true" [filterSyncEnabled]="true">
+              <dxo-remote-operations [sorting]="true" [paging]="true" [filtering]="true" [summary]="false">
+              </dxo-remote-operations>
+              <dxo-column-chooser mode="select" title="Colunas" [enabled]="true"></dxo-column-chooser>
+              <dxo-filter-row applyFilter="onClick" [visible]="true"></dxo-filter-row>
+              <dxo-filter-panel [visible]="true"></dxo-filter-panel>
+              <dxo-header-filter [visible]="false"></dxo-header-filter>
+              <dxo-paging [pageSize]="10"></dxo-paging>
+              <dxo-pager [showPageSizeSelector]="true" [allowedPageSizes]="[10, 20, 50, 100, 200, 500]" [showInfo]="true">
+              </dxo-pager>
+              <dxo-grouping #expand [autoExpandAll]="false"></dxo-grouping>
+              <dxo-export [enabled]="true" [allowExportSelectedData]="false"></dxo-export>
+              <dxi-column caption="Titulo" dataField="Titulo" [visible]="true"></dxi-column>
+              <dxi-column type="buttons" [width]="95">
+                <dxi-button hint="Alterar" icon="fa fa-pencil" cssClass="btnPadrao" [onClick]="abriModalIncluir">
+                </dxi-button>
+                <dxi-button hint="Exclui" icon="fa fa-trash text-danger" cssClass="btnPadrao"
+                  [onClick]="abrirModalExcluir">
+                </dxi-button>
+              </dxi-column>
+            </dx-data-grid>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade corfundomodal" id="modal" bsModal #staticModal="bs-modal" [config]="{backdrop: 'static'}"
+    tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header blue">
+          <h5 id="TituloEditar" class="modal-title white-text">{{modo}} Menu</h5>
+          <button type="button" (click)="staticModal.hide()" class="close white-text" data-dismiss="modal"
+            aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form formulario="ngForm" novalidate [formGroup]="formG" (ngSubmit)='enviarFormulario()'>
+          <div class="modal-body grey lighten-4">
+            <div class="row">
+              <div class="col-md-12">
+                <spw-form-group titulo="Titulo" [error]="formulario.displayMessage.Titulo">
+                  <input type="text" class="form-control" formControlName="Titulo"
+                    [ngClass]="{'isInvalid': formulario.displayMessage.Titulo   }">
+                </spw-form-group>
+              </div>
+              <div class="col-md-12">
+                <spw-form-group titulo="Rota" [error]="formulario.displayMessage.Rota">
+                  <input type="text" class="form-control" formControlName="Rota"
+                    [ngClass]="{'isInvalid': formulario.displayMessage.Rota   }">
+                </spw-form-group>
+              </div>
+              <div class="col-md-12">
+                <spw-form-group titulo="Ordenação" [error]="formulario.displayMessage.Ordenacao">
+                  <input type="number" class="form-control" formControlName="Ordenacao"
+                    [ngClass]="{'isInvalid': formulario.displayMessage.Ordenacao   }">
+                </spw-form-group>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer justify-content-center alturafootermodal grey lighten-3">
+            <button #btn type="submit" class="btn btn-success">Salvar<i class="fa fa-check ml-1 text-white"></i></button>
+            <button type="button" (click)='staticModal.hide()' class="btn btn-danger waves-effect"
+              data-dismiss="modal">Cancelar <i class="fa fa-times ml-1"></i></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade corfundomodal" id="modalexcluir" bsModal #staticModalExcluir="bs-modal"
+    [config]="{backdrop: 'static'}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header blue">
+          <h5 id="TituloEditar" class="modal-title white-text">Excluir Menu</h5>
+          <button type="button" (click)="staticModalExcluir.hide()" class="close white-text" data-dismiss="modal"
+            aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form #formularioExcluir="ngForm" (ngSubmit)="EnviarExcluir(formularioExcluir)">
+          <div class="modal-body grey lighten-4">
+            <div style="text-align: center; font-size: 12pt;">Deseja Realmente excluir o registro
+              <b>{{nomeexcluir}}</b>?
+            </div>
+          </div>
+          <div class="modal-footer justify-content-center alturafootermodal grey lighten-3">
+            <button type="submit" id="btnexcluir" class="btn btn-success">Excluir <i
+                class="fa fa-check ml-1 text-white"></i></button>
+            <button type="button" (click)='staticModalExcluir.hide()' class="btn btn-danger waves-effect">Cancelar <i
+                class="fa fa-times ml-1"></i></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

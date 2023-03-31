@@ -1,0 +1,38 @@
+.dx-datagrid-borders > .dx-datagrid-pager, .dx-datagrid-borders > .dx-datagrid-headers {
+    border-top: 1px solid #ddd;
+    box-shadow: 0px 0px 5px 0 rgba(0,0,0,0.16);
+}
+
+.dx-datagrid-header-panel .dx-apply-button {
+    display: none;
+}
+
+ /* .dx-datagrid-column-chooser .dx-overlay-content {
+     transform: initial!important;
+ } */
+table td{
+    font-weight: 400;
+}
+.dx-datagrid-header-panel .dx-datagrid-export-button {
+    display: none;
+}
+
+.dx-datagrid-header-panel .dx-datagrid-column-chooser-button {
+    display: none;
+}
+
+.dx-datagrid-borders > .dx-datagrid-rowsview, .dx-datagrid-borders > .dx-datagrid-total-footer {
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16);
+}
+
+.dx-datagrid-header-panel {
+    display: none!important;
+}
+.dx-master-detail-cell{
+    background-color: #F5F5F5!important;
+}
+.dx-datagrid-headers {
+    color: black;
+    font-weight: 400;
+}

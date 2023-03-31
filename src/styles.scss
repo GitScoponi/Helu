@@ -1,0 +1,28 @@
+@import "./app/Style/variaveis";
+@import "./app/Style/DX";
+@import "./app/Style/Master";
+@import "./app/Style/SPWCelular";
+@import "./app/Style/SpwComputador";
+@import "./app/Style/styles";
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
+@import "../node_modules/font-awesome/css/font-awesome.min.css";
+@import "../node_modules/devextreme/dist/css/dx.common.css";
+@import "../node_modules/devextreme/dist/css/dx.light.css";
+@import "../node_modules/noty/lib/noty.css";
+@import "../node_modules/animate.css/animate.compat.css";
+@import "../node_modules/noty/lib/themes/bootstrap-v4.css";
+@import "../node_modules/mdbootstrap/css/mdb.min.css";
+.bg-principal {
+    background-color: $cor-primaria;
+    background-image: linear-gradient(160deg, $cor-primaria 0%, $cor-secundaria 100%);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 500;
+}
+

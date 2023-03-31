@@ -1,0 +1,111 @@
+<div class="container-fluid">
+  <div class="card mt-2">
+    <div class="card-header bg-principal">
+      <h4 class="m-3 text-white" style="cursor:pointer; width: fit-content;" (click)="abriModalIncluir()">
+        Parametro
+        <a title="Incluir" id="btnincluir" class="btn-estilo-icone" style="font-size:20pt;"><span><i
+              class="fa fa-plus-circle"
+              style="color:white; vertical-align: middle; text-decoration:none!important"></i></span></a>
+      </h4>
+    </div>
+    <div class="card-body">
+
+      <div class="row">
+        <div class="col-md-12">
+          <button type="button" title="Voltar" *ngIf="false"
+            class="btn btn-outline-info waves-effect btn-sm largurabotoescomandosgrid" routerLink="Chamador">
+            <i class="fa fa-arrow-circle-left" style="font-size: 15pt;" aria-hidden="true"></i>
+          </button>
+          <dx-data-grid #dataGridVar [dataSource]="dataSourceCalculadora" [showBorders]="true"
+            [allowColumnResizing]="true" [allowColumnReordering]="true" [showRowLines]="true" [columnAutoWidth]="false"
+            [rowAlternationEnabled]="true" [filterSyncEnabled]="true">
+            <dxo-remote-operations [sorting]="true" [paging]="true" [filtering]="true" [summary]="false">
+            </dxo-remote-operations>
+            <dxo-column-chooser mode="select" title="Colunas" [enabled]="true"></dxo-column-chooser>
+            <dxo-filter-row applyFilter="onClick" [visible]="true"></dxo-filter-row>
+            <dxo-filter-panel [visible]="true"></dxo-filter-panel>
+            <dxo-header-filter [visible]="false"></dxo-header-filter>
+            <dxo-paging [pageSize]="10"></dxo-paging>
+            <dxo-pager [showPageSizeSelector]="true" [allowedPageSizes]="[10, 20, 50, 100, 200, 500]" [showInfo]="true">
+            </dxo-pager>
+            <dxo-grouping #expand [autoExpandAll]="false"></dxo-grouping>
+            <dxo-export [enabled]="true" [allowExportSelectedData]="false"></dxo-export>
+            <dxi-column caption="Calculadora" dataField="Titulo" width="auto" [visible]="true"></dxi-column>
+            <dxi-column caption="Função" dataField="Funcao" [visible]="true"></dxi-column>
+            <dxo-master-detail [enabled]="true" template="detail"></dxo-master-detail>
+            <div *dxTemplate="let x of 'detail'">
+              <app-parametros-grid-interna [key]="x.data.Codigo"></app-parametros-grid-interna>
+            </div>
+          </dx-data-grid>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade corfundomodal" id="modal" bsModal #staticModal="bs-modal" [config]="{backdrop: 'static'}"
+  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header blue">
+        <h5 id="TituloEditar" class="modal-title white-text">Incluir Parametro</h5>
+        <button type="button" (click)="staticModal.hide()" class="close white-text" data-dismiss="modal"
+          aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form formulario="ngForm" novalidate [formGroup]="formG" (ngSubmit)='enviarFormulario()'>
+        <div class="modal-body grey lighten-4">
+          <div class="row">
+            <div class="col-md-3">
+              <spw-form-group titulo="Calculadora" [error]="formulario.displayMessage.Codigo_Calculadora">
+                <!-- <input type="text" class="form-control" formControlName="Codigo_Calculadora"
+                  [ngClass]="{'isInvalid': formulario.displayMessage.Codigo_Calculadora   }"> -->
+                <dx-select-box [dataSource]="dataSourceCalculadora" displayExpr="Titulo" valueExpr="Codigo"
+                  class="input-group-text" style="height: 38px;" placeholder=""
+                  [ngClass]="{'isInvalid': formulario.displayMessage.Codigo_Calculadora}"
+                  formControlName="Codigo_Calculadora">
+                </dx-select-box>
+              </spw-form-group>
+            </div>
+
+            <div class="col-md-9">
+              <spw-form-group titulo="Titulo" [error]="formulario.displayMessage.Titulo">
+                <input type="text" class="form-control" formControlName="Titulo"
+                  [ngClass]="{'isInvalid': formulario.displayMessage.Titulo   }">
+              </spw-form-group>
+            </div>
+            <div class="col-md-6">
+              <spw-form-group titulo="Tipo" [error]="formulario.displayMessage.Tipo">
+                <!-- <input type="text" class="form-control" formControlName="Tipo"
+                  [ngClass]="{'isInvalid': formulario.displayMessage.Tipo   }"> -->
+                <dx-select-box [items]="dataSourceTipo" displayExpr="tipo" valueExpr="codigo" class="input-group-text"
+                  style="height: 38px;" placeholder="" [ngClass]="{'isInvalid': formulario.displayMessage.Tipo}"
+                  formControlName="Tipo">
+                </dx-select-box>
+              </spw-form-group>
+            </div>
+            <div class="col-md-6">
+              <spw-form-group titulo="Posicao" [error]="formulario.displayMessage.Posicao">
+                <input type="number" class="form-control" formControlName="Posicao"
+                  [ngClass]="{'isInvalid': formulario.displayMessage.Posicao   }">
+              </spw-form-group>
+            </div>
+            <div class="col-md-6">
+              <spw-form-group titulo="Unidade" [error]="formulario.displayMessage.Unidade">
+                <input type="text" class="form-control" formControlName="Unidade"
+                  [ngClass]="{'isInvalid': formulario.displayMessage.Unidade   }">
+              </spw-form-group>
+            </div>
+
+
+          </div>
+        </div>
+        <div class="modal-footer justify-content-center alturafootermodal grey lighten-3">
+          <button #btn type="submit" class="btn btn-success">Salvar<i class="fa fa-check ml-1 text-white"></i></button>
+          <button type="button" (click)='staticModal.hide()' class="btn btn-danger waves-effect"
+            data-dismiss="modal">Cancelar <i class="fa fa-times ml-1"></i></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

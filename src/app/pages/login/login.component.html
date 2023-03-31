@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <div class="card mt-5 centralizar" style=" max-width:400px;">
+        <div class="card-header bg-principal text-white">
+            <h4>Login</h4>
+        </div>
+        <form #formulario="ngForm" (ngSubmit)="enviarFormulario(formulario)">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <spw-form-group titulo="Usuário">
+                            <input type="text" class="form-control" ngModel name="Usuario" required>
+                        </spw-form-group>
+                    </div>
+                    <div class="col-md-12">
+                        <spw-form-group titulo="Senha">
+                            <input type="password" class="form-control" ngModel name="Senha" required>
+                        </spw-form-group>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer text-center">
+                <button class="btn btn-success">Entrar</button>
+            </div>
+        </form>
+    </div>
+</div>

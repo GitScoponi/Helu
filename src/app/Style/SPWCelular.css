@@ -1,0 +1,79 @@
+@media screen and (max-width: 480px) {
+    .TituloDescricao {
+        display: inline-block;
+        max-width: 100%;
+        margin-bottom: 5px;
+        font-weight: 700;
+        color: #616161 !important;
+    }
+    
+    .LabelInput {
+        display: inline-block;
+        max-width: 100%;
+        margin-bottom: 5px;
+        font-weight: normal;
+        font-size: 100%;
+        color: #666;
+    }
+    .btnPlus{
+        font-size:18pt!important;
+        margin: 0 8px 0 8px!important;
+        color: forestgreen;
+    }
+    .btnEditar{
+        font-size: 17pt!important;
+        margin: 0px 5px !important;
+    }
+    span{
+        font-size: 10pt;
+    }
+    .modal-dialog{
+        overflow-y: initial !important
+    }
+    .modal-body{
+        min-height: 150px;
+        max-height: 350px;
+        overflow-y: auto;
+    }
+    .md-form.md-outline label.active {
+        background: #f4f4f4!important;
+        top: .01rem;
+    }
+    .container{
+        width: 100%;
+        padding: 0;
+    }
+    .container-fluid{
+        padding-left: 7px;
+        padding-right: 7px;
+    }
+    .mat-vertical-content-container  {
+        margin-left: 0 !important;
+    }
+    .mat-horizontal-content-container  {
+        margin: 0 !important;
+        padding: 0 0 24px 0 !important;
+    }
+    .mat-vertical-content {
+        margin-left: 0 !important;
+        padding: 0 0 24px 0 !important;
+    }
+    .mat-horizontal-content {
+        margin-left: 0 !important;
+        padding: 0 0 24px 0 !important;
+    }
+    .card-body-stepper{
+        padding: 0 !important;
+    }
+    .mat-stepper-label-position-bottom .mat-horizontal-stepper-header, .mat-vertical-stepper-header {
+         padding: 24px 0px !important; 
+    }
+    .mat-stepper-vertical-line::before {
+        border-left-color: rgba(250, 246, 246, 0.12);
+    }
+    .dx-group-panel-message{
+        max-width: 300px;
+    }
+    
+
+}

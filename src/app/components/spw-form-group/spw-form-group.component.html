@@ -1,0 +1,7 @@
+<div class="form-group">
+    <label class="form-label LabelInput">{{titulo}}</label>
+    <ng-content></ng-content>
+    <span class="text-danger" *ngIf="error" >
+        <p [innerHTML]="error" style="margin-bottom: -20px;"> </p>
+    </span>
+</div>

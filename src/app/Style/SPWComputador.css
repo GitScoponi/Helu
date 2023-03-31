@@ -1,0 +1,267 @@
+.TituloCard {
+    font-size: 24px;
+    line-height: normal;
+    align-self: flex-end;
+    display: flex;
+    line-height: normal;
+    overflow: hidden;
+    transform-origin: 149px 48px;
+    margin: 0;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
+}
+
+.card-login {
+    max-width: 400px;
+    margin: 0 auto;
+}
+.readOnly{
+    background-color: #e9ecef !important;
+    opacity: 1 !important;
+    border: 1px solid #ced4da !important;
+    border-radius: .25rem !important;
+    border-top-left-radius: 0.25rem !important;
+    border-top-right-radius: 0.25rem !important;
+    border-bottom-right-radius: 0.25rem !important;
+    border-bottom-left-radius: 0.25rem !important;
+    height: 37px !important;
+}
+.TituloDescricao {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: #616161 !important;
+}
+
+.Campo {
+    color: #666666;
+    font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif;
+    font-size: 10pt;
+    font-weight: 300;
+}
+.Upper{
+text-transform: uppercase;
+}
+.Campo-Detail {
+    color: #333333;
+    font: 12px Segoe UI, Helvetica, Droid Sans, Tahoma, Geneva, sans-serif;
+    font-weight: bold !important;
+    overflow-wrap: break-word;
+    word-wrap:break-word
+}
+.Titulo-Detail {
+    color: Black;
+    font-weight: bold;
+    font-style: normal;
+    font-variant: normal;
+    font-size: 10pt;
+    line-height: normal;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+.tamanhoCampo {
+    width: 160px;
+}
+.subcard {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #DFDFDF;
+    background-color: #f4f4f4;
+    border-radius: 4px;
+}
+.nomeSistema {
+    color: #003c71;
+    font-weight: bold;
+    font-family: Arial Narrow;
+    overflow: hidden;
+    text-align: center;
+    font-size: 29px;
+    width: 60%;
+}
+
+.LabelInput {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: normal;
+    font-size: 100%;
+    color: #666;
+}
+
+.btnPlus {
+    font-size: 18pt!important;
+    margin: 0 8px 0 8px!important;
+    color: forestgreen;
+}
+
+.iconStepper {
+    font-size: 15pt!important;
+    margin: 0 8px 0 8px!important;
+    color: dodgerblue;
+    z-index: 9999;
+    width: 30px;
+    height: 72px;
+    align-items: center
+}
+
+.centralizar {
+    margin: 0 auto;
+}
+
+.centralizarNaTela {
+    left: 50%;
+    top: 50%;
+    margin-left: -50%;
+    /* Metade do valor da Largura */
+    margin-top: -50%;
+    /* Metade da valor da Altura */
+    position: absolute;
+    width: 100%;
+    /* Valor da Largura */
+    height: 100%;
+    /* Valor da Altura */
+}
+
+.SPWDisabled {
+    background-color: #e9ecef!important;
+    opacity: 1!important;
+    cursor: inherit!important;
+    border: 1px solid #ced4da!important;
+}
+
+p {
+    font-size: 11pt;
+    margin-left: 5px;
+}
+
+a {
+    color: dodgerblue!important;
+    font-size: 10pt;
+}
+
+.text-blue {
+    color: dodgerblue!important;
+}
+
+.btnEditar {
+    font-size: 14pt!important;
+    margin: 0px 8px !important;
+}
+
+ul {
+    margin: 0;
+}
+
+.dx-checkbox-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 2px;
+    border: 1px solid #212529;
+    background-color: #fff;
+}
+
+.menuLogin {
+    text-align: center;
+    min-width: 5rem;
+}
+
+.iconeChamador {
+    font-size: 30pt;
+}
+
+.btnChamador {
+    width: 120px;
+    margin: 30px 20px;
+    cursor: pointer;
+    color: gray;
+}
+
+.btnIconeAppend {
+    margin: 0!important;
+    max-height: 37px!important;
+    font-size: 14pt !important;
+    box-shadow: 0 0px 1px 0 rgb(0 0 0 / 16%), 0 0px 4px 0 rgb(0 0 0 / 12%)!important;
+}
+
+.LabelInputAtivo {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: normal;
+    font-size: 100%;
+    color: #2196F3;
+}
+
+.cem {
+    width: 100%;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.h-100 {
+    height: 100%
+}
+.MargemForte {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+/* classes card marcos ================================================================================================================= */
+.subcard {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #DFDFDF;
+    background-color: #f4f4f4;
+    border-radius: 4px;
+}
+
+.textoazul {
+    background-color: #007bff!important;
+}
+
+.cardbold span.textoazul {
+    background-color: #007bff!important;
+}
+
+.botoesconsulta {
+    width: 100%;
+    padding: .25rem .5rem;
+    margin-bottom: 10px;
+}
+
+.textolink {
+    color: #007bff!important;
+    cursor: pointer;
+    font-size: 12pt!important;
+}
+
+.md-form.md-outline label.active {
+    background: #f4f4f4!important;
+    top: .01rem;
+}
+
+.pesquisacard {
+    margin-top: 5px  !important;
+    margin-bottom: 15px !important;
+}
+
+.cardtotal {
+    width: 100%;
+    margin-bottom: 15px;
+}
+.noty-message{
+    width:800px;
+    height:800px;
+}
+
+.cardtext {
+    font-size: 14px;
+}
+
+.cardbold {
+    font-weight: bold;
+}
+
+/* Fim classes card marcos ================================================================================= */
