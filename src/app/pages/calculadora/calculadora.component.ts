@@ -57,6 +57,7 @@ export class CalculadoraComponent implements OnInit {
       Titulo: ['', [Validators.required]],
       Funcao: ['', [Validators.required]],
       Codigo_Menu: ['', [Validators.required]],
+      Observacao: [''],
     });
   }
 

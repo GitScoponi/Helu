@@ -60,6 +60,13 @@
                                     [ngClass]="{'isInvalid': formulario.displayMessage.Funcao   }">
                             </spw-form-group>
                         </div>
+                        
+                        <div class="col-md-12">
+                            <spw-form-group titulo="Observaçao" [error]="formulario.displayMessage.Observacao">
+                                <input type="text" class="form-control" formControlName="Observacao"
+                                    [ngClass]="{'isInvalid': formulario.displayMessage.Observacao   }">
+                            </spw-form-group>
+                        </div>
 
 
                     </div>

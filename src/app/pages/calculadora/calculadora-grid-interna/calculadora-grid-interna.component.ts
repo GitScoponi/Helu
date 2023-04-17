@@ -64,6 +64,7 @@ export class CalculadoraGridInternaComponent implements OnInit {
       Titulo: ['', [Validators.required]],
       Funcao: ['', [Validators.required]],
       Codigo_Menu: ['', [Validators.required]],
+      Observacao: [''],
     });
     this.obterDados();
   }
